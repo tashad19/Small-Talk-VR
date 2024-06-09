@@ -2,11 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-
+using UnityEngine.XR.Interaction.Toolkit.Inputs.Simulation;
 
 public class MenuController : MonoBehaviour
 {
-    public void StartBtn(){
-        SceneManager.LoadScene("Main VR Scene");
-}
+
+    [SerializeField] XRDeviceSimulator XRDSim;
+    public void StartBtn()
+    {
+        Destroy(XRDSim);
+        SceneManager.LoadScene("Interview Scene");
+    }
 }
